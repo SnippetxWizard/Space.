@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space</title>
+    <style>
+        body {
+            background: #000;
+            overflow: hidden;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: black;
+            animation: twinkle 2s infinite;
+        }
+
+        .stars::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.7;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .planet-name {
+            position: absolute;
+            top: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #sun {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #f7e02c, #f7a10c);
+            box-shadow: 0 0 30px 10px rgba(255, 255, 0, 0.8);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #mercury {
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #c2c2c2, #7a7a7a);
+            animation: orbit-mercury 10s linear infinite;
+        }
+
+        #venus {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #d4a373, #9c6e3f);
+            animation: orbit-venus 15s linear infinite;
+        }
+
+        #earth {
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle, #4a90e2, #0077be);
+            animation: orbit-earth 20s linear infinite;
+        }
+
+        #mars {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #e27a3f, #b35129);
+            animation: orbit-mars 25s linear infinite;
+        }
+
+        #jupiter {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #d17e3a, #9e502d);
+            animation: orbit-jupiter 30s linear infinite;
+        }
+
+        #saturn {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #e0c76c, #c3a84d);
+            animation: orbit-saturn 35s linear infinite;
+        }
+
+        #uranus {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #5db5d0, #3c8a8b);
+            animation: orbit-uranus 40s linear infinite;
+        }
+
+        #neptune {
+            width: 85px;
+            height: 85px;
+            background: radial-gradient(circle, #4b82c1, #3a6f9d);
+            animation: orbit-neptune 45s linear infinite;
+        }
+
+        @keyframes orbit-mercury {
+            0% {
+                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(100px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit-venus {
+            0% {
+                transform: rotate(0deg) translateX(150px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(150px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit-earth {
+            0% {
+                transform: rotate(0deg) translateX(200px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(200px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit-mars {
+            0% {
+                transform: rotate(0deg) translateX(250px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(250px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit-jupiter {
+            0% {
+                transform: rotate(0deg) translateX(300px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(300px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit-saturn {
+            0% {
+                transform: rotate(0deg) translateX(350px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(350px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit-uranus {
+            0% {
+                transform: rotate(0deg) translateX(400px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(400px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit-neptune {
+            0% {
+                transform: rotate(0deg) translateX(450px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(450px) rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+
+    <!-- Sun -->
+    <div id="sun" class="planet">
+        <div class="planet-name">Sun</div>
+    </div>
+
+    <!-- Mercury -->
+    <div id="mercury" class="planet">
+        <div class="planet-name">Mercury</div>
+    </div>
+
+    <!-- Venus -->
+    <div id="venus" class="planet">
+        <div class="planet-name">Venus</div>
+    </div>
+
+    <!-- Earth -->
+    <div id="earth" class="planet">
+        <div class="planet-name">Earth</div>
+    </div>
+
+    <!-- Mars -->
+    <div id="mars" class="planet">
+        <div class="planet-name">Mars</div>
+    </div>
+
+    <!-- Jupiter -->
+    <div id="jupiter" class="planet">
+        <div class="planet-name">Jupiter</div>
+    </div>
+
+    <!-- Saturn -->
+    <div id="saturn" class="planet">
+        <div class="planet-name">Saturn</div>
+    </div>
+
+    <!-- Uranus -->
+    <div id="uranus" class="planet">
+        <div class="planet-name">Uranus</div>
+    </div>
+
+    <!-- Neptune -->
+    <div id="neptune" class="planet">
+        <div class="planet-name">Neptune</div>
+    </div>
+</body>
+</html>
